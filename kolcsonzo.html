@@ -1,11 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L.S.G Motors | Luxury, Sport & Grandeur</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="./kulcsonzo.css">
+  <script src="./kulcsonzo.js" defer></script>
+  <script type="module" src="./foglalások.js" defer></script>
+  <script type="module" src="./kulcsonzo_autok.js" defer></script>
+  <script src="./szinvaltas.js" defer></script>
 </head>
-<body>
-    
+<body class="bg-black text-light">
+
+  <!-- Navigáció -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark-glass sticky-top shadow-lg">
+    <div class="container">
+      <a class="navbar-brand fw-black d-flex align-items-center tracking-wide" href="#portfolio">
+        <span class="brand-badge me-2">LSG</span>
+        <span class="brand-text">L.S.G <span class="purple-gradient-text">MOTORS</span></span>
+      </a>
+      <span class="brand-subtext d-none d-md-inline text-muted small ms-2 ps-2 border-start border-secondary">Luxury &bull; Sport &bull; Grandeur</span>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-2">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="#portfolio"><i class="bi bi-gem me-1"></i> Portfólió</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="#foglalasok"><i class="bi bi-shield-check me-1"></i> Foglalások</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom btn-nav-cta" href="#uj-foglalas"><i class="bi bi-lightning-charge-fill me-1"></i> Foglalás</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. PORTFÓLIÓ RÉSZ -->
+  <section id="portfolio" class="py-5">
+    <div class="container">
+      <!-- Hero Banner -->
+      <div class="p-4 p-md-5 mb-5 rounded-4 hero-banner shadow-purple position-relative overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="col-lg-8 py-3 position-relative z-1">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill badge-lsg mb-3">
+            <i class="bi bi-stars purple-text"></i>
+            <span class="small fw-semibold text-uppercase letter-spacing-1">Luxury &bull; Sport &bull; Grandeur</span>
+          </div>
+          <h1 class="display-3 fw-black text-white lh-tight mb-3">
+            Ahol a luxus és a dinamizmus <span class="purple-gradient-text">eggyé válik.</span>
+          </h1>
+          <p class="fs-5 text-gray-300 mb-4 max-w-600">
+            Fekete-lila elegancia, exkluzív sportflotta, egyedi színkonfigurátor és zéró kompromisszum. Válaszd ki a stílusodat, állítsd be az árnyalatot és indulj útnak!
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#uj-foglalas" class="btn btn-purple btn-lg fw-bold shadow-lg">
+              <i class="bi bi-key-fill me-2"></i> Autó bérlése most
+            </a>
+            <a href="#foglalasok" class="btn btn-outline-purple btn-lg fw-semibold">
+              <i class="bi bi-eye me-2"></i> Foglalások megtekintése
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Előnyök kártyák -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card h-100 dark-card p-4 rounded-4 border-purple-hover">
+            <div class="icon-circle mb-3"><i class="bi bi-palette2 purple-text fs-3"></i></div>
+            <h5 class="fw-bold text-white">Egyedi Színváltó</h5>
+            <p class="text-muted mb-0">Minden autónkhoz közvetlenül az oldalon választhatsz prémium árnyalatot (Éjfekete, Neon Lila, Titán stb.).</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 dark-card p-4 rounded-4 border-purple-hover">
+            <div class="icon-circle mb-3"><i class="bi bi-shield-shaded purple-text fs-3"></i></div>
+            <h5 class="fw-bold text-white">VIP Védelem & CASCO</h5>
+            <p class="text-muted mb-0">Önrészmentes prémium biztosítás és 0-24 órás VIP Concierge asszisztencia minden bérléshez.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 dark-card p-4 rounded-4 border-purple-hover">
+            <div class="icon-circle mb-3"><i class="bi bi-lightning-fill purple-text fs-3"></i></div>
+            <h5 class="fw-bold text-white">Top Teljesítmény</h5>
+            <p class="text-muted mb-0">Kizárólag M Power, AMG, Porsche és RS modellek maximális felszereltséggel és gondozottsággal.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Elérhető flottakínálat + Színváltó bemutató -->
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 gap-2">
+        <div>
+          <span class="purple-text fw-bold text-uppercase small letter-spacing-1">L.S.G Kollekció</span>
+          <h2 class="fw-bold text-white mb-0">Elérhető modelljeink & Színválasztó</h2>
+        </div>
+        <span class="text-muted small"><i class="bi bi-info-circle me-1"></i> Kattints a színkorongokra a jármű színének és képének váltásához!</span>
+      </div>
+      <div class="row g-4" id="fleetCardsContainer">
+        <!-- JS generálja a cars_v2-ből -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FOGLALÁSOK RÉSZ -->
+  <section id="foglalasok" class="py-5 bg-dark-alt border-top border-purple-subtle">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+          <span class="purple-text fw-bold text-uppercase small letter-spacing-1">Adminisztráció</span>
+          <h2 class="fw-bold text-white mb-1">Rendszerben lévő foglalások</h2>
+          <p class="text-muted mb-0">Keresés, összetett szűrés, nézetváltás és Soft Delete törlés</p>
+        </div>
+        
+        <!-- Nézetváltó -->
+        <div class="btn-group view-switcher shadow" role="group">
+          <button type="button" class="btn btn-view active" id="btnTableView">
+            <i class="bi bi-table me-1"></i> Táblázat
+          </button>
+          <button type="button" class="btn btn-view" id="btnCardView">
+            <i class="bi bi-grid-fill me-1"></i> Kártyák
+          </button>
+        </div>
+      </div>
+
+      <!-- Kereső és Összetett szűrő panel -->
+      <div class="card dark-card border-0 mb-4 p-3 rounded-4 shadow-sm">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-5">
+            <label for="searchInput" class="form-label text-gray-300 small fw-semibold">
+              <i class="bi bi-search purple-text me-1"></i> Keresés ügyfélre vagy autóra:
+            </label>
+            <input type="text" id="searchInput" class="form-control form-control-dark" placeholder="Pl. Horváth Marcell, Porsche...">
+          </div>
+          <div class="col-md-4">
+            <label for="carFilterSelect" class="form-label text-gray-300 small fw-semibold">
+              <i class="bi bi-funnel purple-text me-1"></i> Szűrés konkrét modellre:
+            </label>
+            <select id="carFilterSelect" class="form-select form-control-dark">
+              <option value="">-- Minden L.S.G modell --</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <button id="btnResetFilters" class="btn btn-outline-purple w-100">
+              <i class="bi bi-arrow-counterclockwise me-1"></i> Szűrők alaphelyzetbe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendezés gombok -->
+      <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+        <span class="text-muted small fw-semibold me-2"><i class="bi bi-sort-down purple-text"></i> Rendezés:</span>
+        <button class="btn btn-sm btn-sort" id="sortByNameBtn">Név szerint (A-Z)</button>
+        <button class="btn btn-sm btn-sort" id="sortByDateBtn">Kezdő dátum szerint</button>
+        <button class="btn btn-sm btn-sort" id="sortByPriceBtn">Végösszeg szerint</button>
+        <span class="ms-auto badge bg-purple-subtle text-purple py-2 px-3 rounded-pill" id="activeRecordCount">0 aktív foglalás</span>
+      </div>
+
+      <!-- Táblázat Nézet -->
+      <div id="tableViewContainer" class="table-responsive rounded-4 shadow-lg overflow-hidden border border-dark">
+        <table class="table table-dark table-hover align-middle mb-0 custom-table">
+          <thead>
+            <tr>
+              <th>Kód</th>
+              <th>Ügyfél</th>
+              <th>Elérhetőség</th>
+              <th>Jármű & Választott Szín</th>
+              <th>Időszak</th>
+              <th>Nap</th>
+              <th>Összeg</th>
+              <th class="text-center">Művelet</th>
+            </tr>
+          </thead>
+          <tbody id="rentalsTableBody">
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Kártyás Nézet -->
+      <div id="cardViewContainer" class="row g-3 d-none">
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FOGLALÁSI ŰRLAP RÉSZ -->
+  <section id="uj-foglalas" class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card dark-card border-purple p-4 p-md-5 rounded-4 shadow-purple">
+            <div class="text-center mb-4">
+              <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill badge-lsg mb-2">
+                <i class="bi bi-lightning-charge-fill purple-text"></i>
+                <span class="small fw-semibold text-uppercase">Online Konfiguráció</span>
+              </div>
+              <h2 class="fw-bold text-white">L.S.G Bérlés Leadása</h2>
+              <p class="text-muted">Válaszd ki a modellt, a kívánt színt és az időtartamot. Az ár élőben frissül!</p>
+            </div>
+
+            <!-- UI Hibajelzés (Bootstrap alert) -->
+            <div id="formAlertBox" class="alert alert-danger d-none border-0 shadow-sm rounded-3" role="alert">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-exclamation-triangle-fill fs-4 me-2"></i>
+                <div id="formAlertMsg">Kérlek töltsd ki helyesen a mezőket!</div>
+              </div>
+            </div>
+
+            <form id="bookingForm" novalidate>
+              <div class="row g-3">
+                <!-- Név -->
+                <div class="col-12">
+                  <label for="custName" class="form-label text-gray-300 small fw-semibold">Ügyfél teljes neve *</label>
+                  <input type="text" class="form-control form-control-dark" id="custName" placeholder="pl. Varga Bence" required>
+                  <div class="invalid-feedback">Kérlek add meg a teljes nevedet (min. 3 karakter)!</div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6">
+                  <label for="custEmail" class="form-label text-gray-300 small fw-semibold">Email-cím *</label>
+                  <input type="email" class="form-control form-control-dark" id="custEmail" placeholder="pelda@lsg-motors.hu" required>
+                  <div class="invalid-feedback">Érvényes email-címet adj meg!</div>
+                </div>
+
+                <!-- Telefon -->
+                <div class="col-md-6">
+                  <label for="custPhone" class="form-label text-gray-300 small fw-semibold">Telefonszám *</label>
+                  <input type="tel" class="form-control form-control-dark" id="custPhone" placeholder="+36301234567" required>
+                  <div class="invalid-feedback">Érvényes telefonszámot adj meg (+36... vagy 06...)!</div>
+                </div>
+
+                <!-- Autó választó -->
+                <div class="col-md-7">
+                  <label for="carSelect" class="form-label text-gray-300 small fw-semibold">Választott L.S.G modell *</label>
+                  <select class="form-select form-control-dark" id="carSelect" required>
+                    <option value="">-- Válassz autót a listából --</option>
+                  </select>
+                  <div class="invalid-feedback">Kérlek válassz egy járművet!</div>
+                </div>
+
+                <!-- Színválasztó az űrlapon -->
+                <div class="col-md-5">
+                  <label for="carColorSelect" class="form-label text-gray-300 small fw-semibold">Választott színárnyalat *</label>
+                  <select class="form-select form-control-dark" id="carColorSelect" required>
+                    <option value="">-- Előbb válassz autót --</option>
+                  </select>
+                  <div class="invalid-feedback">Kérlek válassz színt!</div>
+                </div>
+
+                <!-- Dátumok -->
+                <div class="col-md-6">
+                  <label for="startDate" class="form-label text-gray-300 small fw-semibold">Bérlés kezdete *</label>
+                  <input type="date" class="form-control form-control-dark" id="startDate" required>
+                  <div class="invalid-feedback">A kezdő dátum nem lehet múltbeli!</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="endDate" class="form-label text-gray-300 small fw-semibold">Bérlés vége *</label>
+                  <input type="date" class="form-control form-control-dark" id="endDate" required>
+                  <div class="invalid-feedback">A záró dátum nem lehet korábbi a kezdőnél!</div>
+                </div>
+
+                <!-- Kalkulációs sáv -->
+                <div class="col-12 mt-3">
+                  <div class="p-3 rounded-4 calc-box border border-purple">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                      <div>
+                        <span class="text-muted d-block small">Kalkulált időtartam:</span>
+                        <strong class="fs-5 text-white" id="calcDaysText">0 nap</strong>
+                      </div>
+                      <div class="text-end">
+                        <span class="text-muted d-block small">Végösszeg (Bruttó):</span>
+                        <strong class="fs-3 purple-gradient-text" id="calcPriceText">0 Ft</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Beküldés -->
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-purple w-100 py-3 fw-bold fs-5 shadow-lg">
+                    <i class="bi bi-lightning-charge-fill me-2"></i> Foglalás Véglegesítése
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sikeres foglalás Modál -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content dark-card border-purple rounded-4 shadow-purple">
+        <div class="modal-header border-bottom border-dark">
+          <h5 class="modal-title fw-bold text-white d-flex align-items-center">
+            <i class="bi bi-patch-check-fill purple-text fs-4 me-2"></i> L.S.G Foglalás Megerősítve
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted mb-3">A foglalásod sikeresen rögzítésre került az L.S.G rendszerében:</p>
+          <ul class="list-group list-group-flush rounded-3 border border-dark mb-3">
+            <li class="list-group-item bg-dark d-flex justify-content-between text-light">
+              <span class="text-muted">Azonosító:</span>
+              <strong class="purple-text" id="modalBookingId"></strong>
+            </li>
+            <li class="list-group-item bg-dark d-flex justify-content-between text-light">
+              <span class="text-muted">Bérlő neve:</span>
+              <strong id="modalName"></strong>
+            </li>
+            <li class="list-group-item bg-dark d-flex justify-content-between text-light">
+              <span class="text-muted">Jármű & Szín:</span>
+              <strong id="modalCar"></strong>
+            </li>
+            <li class="list-group-item bg-dark d-flex justify-content-between text-light">
+              <span class="text-muted">Időtartam:</span>
+              <strong id="modalDates"></strong>
+            </li>
+            <li class="list-group-item bg-dark d-flex justify-content-between text-light">
+              <span class="text-muted">Fizetendő összeg:</span>
+              <strong class="fs-5 purple-gradient-text" id="modalPrice"></strong>
+            </li>
+          </ul>
+          <p class="small text-muted mb-0"><i class="bi bi-info-circle me-1"></i> A tétel mostantól aktívan szerepel a táblázatos és kártyás listában is.</p>
+        </div>
+        <div class="modal-footer border-top border-dark">
+          <button type="button" class="btn btn-purple w-100 rounded-3" data-bs-dismiss="modal">Rendben</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vissza a tetejére gomb -->
+  <button id="scrollToTopBtn" class="btn btn-purple shadow-lg rounded-circle" title="Vissza a tetejére">
+    <i class="bi bi-arrow-up-short fs-2"></i>
+  </button>
+
+  <!-- Lábléc -->
+  <footer class="bg-black py-4 border-top border-dark">
+    <div class="container text-center text-muted small">
+      <p class="mb-1 fw-bold text-white">L.S.G MOTORS &mdash; Luxury, Sport & Grandeur</p>
+      <p class="mb-0 text-secondary">&copy; 2026 L.S.G Motors Hungary. Fekete-Lila prémium frontend webalkalmazás.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- App JS -->
+  <script src="app.js"></script>
 </body>
 </html>
