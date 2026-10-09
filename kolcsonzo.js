@@ -18,8 +18,8 @@ const cars = [
     model: "Taycan Turbo S",
     dailyPrice: 68000,
     colors: [
-      { name: "Fekete Metál", hex: "#18181b", img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=600" },
-      { name: "Ultra Violet", hex: "#7c3aed", img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" }
+      { name: "Ultra violet", hex: "#7c3aed", img: "/cars/colors/porsche-taycan-turbo-purple.jpg" },
+      { name: "Fekete metál", hex: "#000000", img: "/cars/colors/porschetaycanturbosblack.jpg" }
     ]
   },
   {
