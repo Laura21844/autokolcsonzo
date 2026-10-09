@@ -7,7 +7,7 @@ const cars = [
     model: "M4 Competition",
     dailyPrice: 52000,
     colors: [
-      { name: "Éjfekete", hex: "#111111", img: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600" },
+      { name: "Éjfekete", hex: "#111111", img: "/cars/colors/BMW_M4_Competition_lila.jpg" },
       { name: "Neon Lila", hex: "#8b5cf6", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600" },
       { name: "Hófehér", hex: "#f4f4f5", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600" }
     ]
