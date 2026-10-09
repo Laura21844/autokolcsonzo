@@ -7,9 +7,9 @@ const cars = [
     model: "M4 Competition",
     dailyPrice: 52000,
     colors: [
-      { name: "Éjfekete", hex: "#111111", img: "/cars/colors/BMW_M4_Competition_lila.jpg" },
-      { name: "Neon Lila", hex: "#8b5cf6", img: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600" },
-      { name: "Hófehér", hex: "#f4f4f5", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=600" }
+      { name: "Éjfekete", hex: "#111111", img: "/cars/colors/bmw_m4_fekete.jpg" },
+      { name: "Neon Lila", hex: "#8b5cf6", img: "/cars/colors/bmw_m4_lila.jpg" },
+      { name: "Hófehér", hex: "#f4f4f5", img: "/cars/colors/bmw_m4_feher.jpg" }
     ]
   },
   {
@@ -45,11 +45,11 @@ const cars = [
   {
     id: 5,
     brand: "Ford",
-    model: "Mustang Dark Horse",
+    model: "Mustang GT 500 Shelby",
     dailyPrice: 44000,
     colors: [
-      { name: "Shadow Black", hex: "#0f172a", img: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=600" },
-      { name: "Cyber Violet", hex: "#a855f7", img: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600" }
+      { name: "Shadow Black", hex: "#0f172a", img: "/cars/colors/ford_black.jpg" },
+      { name: "Cyber Violet", hex: "#a855f7", img: "/cars/colors/ford_lila.jpg" }
     ]
   },
   {
