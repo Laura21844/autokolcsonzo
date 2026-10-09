@@ -1,285 +1,76 @@
-:gyökér {
- --lsg-purple : #9333ea ;
- --lsg-purple-glow : rgba ( 147 , 51 , 234 , 0,4 );
- --lsg-purple-dark : #6b21a8 ;
- --lsg-purple-light : #c084fc ;
- --lsg-bg-black : #09090b ;
- --lsg-kártya-bg : #121217 ;
- --lsg-border : #27272a ;
- }
+body {
+  background-color: #0b0b0e;
+  color: #e4e4e7;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
 
- test {
- háttérszín : var ( --lsg-bg-black ) !important ;
- szín : #f4f4f5 ;
- font-family : 'Segoe UI' , system-ui , -apple-system , Roboto, sans-serif ;
- görgetési viselkedés : sima ;
- }
+.text-purple {
+  color: #a855f7 !important;
+}
 
- .fw-black {
- betűméret : 900 ;
- }
+.bg-dark-card {
+  background-color: #14141b;
+}
 
- .bg-dark-alt {
- háttérszín : #0d0d12 ;
- }
+.border-purple {
+  border-color: #8b5cf6 !important;
+}
 
- .bg-sötét üveg {
- háttérszín : rgba ( 9 , 9 , 11 , 0.88 ) !important ;
- háttérszűrő : elmosódás ( 12 képpont );
- border-bottom : 1px tömör rgba ( 147 , 51 , 234 , 0,25 );
- }
+.btn-purple {
+  background-color: #8b5cf6;
+  border-color: #8b5cf6;
+  color: #ffffff;
+}
 
- .purple-text {
- szín : var ( --lsg-purple-light ) !important ;
- }
+.btn-purple:hover {
+  background-color: #7c3aed;
+  border-color: #7c3aed;
+  color: #ffffff;
+}
 
- .text-purple {
- szín : #c084fc !fontos ;
- }
+.btn-outline-purple {
+  color: #a855f7;
+  border-color: #8b5cf6;
+}
 
- .bg-purple-subtle {
- háttérszín : rgba ( 147 , 51 , 234 , 0,18 ) !important ;
- }
+.btn-outline-purple.active,
+.btn-outline-purple:hover {
+  background-color: #8b5cf6;
+  color: #ffffff;
+}
 
- .border-purple-subtle {
- szegélyszín : rgba ( 147 , 51 , 234 , 0.2 ) !important ;
- }
+/* Színváltó pöttyök a kártyán */
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #52525b;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 6px;
+}
 
- .border-purple {
- szegély : 1px tömör rgba ( 147 , 51 , 234 , 0.4 ) !important ;
- }
+.swatch.active {
+  border-color: #a855f7;
+  transform: scale(1.15);
+}
 
- .purple-gradiens-szöveg {
- háttér : lineáris gradiens ( 135deg , #c084fc , #9333ea );
- -webkit-background-clip : szöveg ;
- -webkit-text-fill-color : átlátszó ;
- }
+.car-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
 
- /* Márkajelvény */
- .brand-badge {
- háttér : lineáris gradiens ( 135deg , #9333ea , #6b21a8 );
- szín : #fff ;
- betűméret : 0,85 rem ;
- kitöltés : 4px 8px ;
- szegély sugara : 6px ;
- betűméret : 800 ;
- box-shadow : 0 0 12px var ( --lsg-purple-glow );
- }
-
- .badge-lsg {
- háttérszín : rgba ( 147 , 51 , 234 , 0,15 );
- szegély : 1 képpontos tömör rgba ( 147 , 51 , 234 , 0,35 );
- }
-
- /* Hős */
- .hero-banner {
- háttér : lineáris gradiens ( 135 fok , rgba ( 9 , 9 , 11 , 0,94 ), rgba ( 24 , 10 , 40 , 0,88 )),
- url ( ' https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1400&q=80 ' ) középre / borítóra , ismétlés nélküli ;
- szegély : 1 képpontos tömör rgba ( 147 , 51 , 234 , 0,3 );
- }
-
- .hero-glow {
- pozíció : abszolút ;
- felső : -50px ;
- jobbra : -50px ;
- szélesség : 320 képpont ;
- magasság : 320 képpont ;
- háttér : radial-gradient ( kör , var ( --lsg-purple-glow ) 0% , átlátszó 70% );
- pointer-events : none ;
- }
-
- .shadow-purple {
- doboz-árnyék : 0 10px 30px rgba ( 147 , 51 , 234 , 0,15 );
- }
-
- /* Gombok */
- .btn-purple {
- háttér : lineáris gradiens ( 135deg , #9333ea , #7c3aed );
- szín : #ffffff ;
- határ : nincs ;
- átmenet : mind a 0,3 másodperces könnyedség ;
- }
-
- .btn-purple:hover {
- háttér : lineáris gradiens ( 135deg , #a855f7 , #9333ea );
- szín : #ffffff ;
- box-shadow : 0 0 20px var ( --lsg-purple-glow );
- transzform : translateY ( -2px );
- }
-
- .btn-körvonal-purple {
- szegély : 1 képpontos tömör rgba ( 147 , 51 , 234 , 0,6 );
- szín : var ( --lsg-lila-világos );
- háttér : átlátszó ;
- átmenet : mind a 0,3 másodperces könnyedség ;
- }
-
- .btn-outline-purple:hover {
- háttér : rgba ( 147 , 51 , 234 , 0,2 );
- szín : #ffffff ;
- szegélyszín : var ( --lsg-purple );
- }
-
- .btn-nav-cta {
- háttér : rgba ( 147 , 51 , 234 , 0,2 );
- szegély : 1 képpontos tömör rgba ( 147 , 51 , 234 , 0,4 );
- szegély sugara : 20px ;
- kitöltés : 6px 16px !important ;
- szín : #c084fc !fontos ;
- }
-
- .btn-nav-cta:hover {
- háttér : var ( --lsg-purple );
- szín : #ffffff !fontos ;
- }
-
- /* Kártyák */
- .dark-kártya {
- háttérszín : var ( --lsg-card-bg );
- border : 1px solid var ( --lsg-border );
- átmenet : mind a 0,3 másodperces könnyedség ;
- }
-
- .border-purple-hover:hover {
- szegélyszín : var ( --lsg-purple );
- transzform : translateY ( -4px );
- doboz-árnyék : 0 10px 25px rgba ( 147 , 51 , 234 , 0,2 );
- }
-
- .icon-kör {
- szélesség : 55 képpont ;
- magasság : 55 képpont ;
- szegélysugár : 50% ;
- háttér : rgba ( 147 , 51 , 234 , 0,15 );
- kijelző : rugalmas ;
- igazítás-elemek : középre ;
- igazítsd a tartalmat : középre ;
- }
-
- /* Flotta kártyák és Színváltó pöttyök */
- .flottakártya {
- háttérszín : #13131a ;
- szegély : 1px tömör #23232c ;
- túlcsordulás : rejtett ;
- átmenet : mind a 0,3 másodperces könnyedség ;
- }
-
- .flottakártya:lebeg {
- szegélyszín : var ( --lsg-purple );
- doboz-árnyék : 0 12px 28px rgba ( 147 , 51 , 234 , 0,22 );
- transzform : translateY ( -4px );
- }
-
- .car-img-wrapper {
- magasság : 220 képpont ;
- pozíció : relatív ;
- háttérszín : #0b0b0e ;
- túlcsordulás : rejtett ;
- }
-
- .car-img-wrapper kép {
- szélesség : 100% ;
- magasság : 100% ;
- tárgy-illeszkedés : fedél ;
- átmenet : transzformáció 0,4 másodperc könnyű ;
- }
-
- .fleet-card:hover .car-img-wrapper kép {
- transzform : scale ( 1,05 );
- }
-
- Színváltó körök
- .színminta-mintákat {
- kijelző : rugalmas ;
- rés : 8px ;
- igazítás-elemek : középre ;
- }
-
- .swatch-gomb {
- szélesség : 22 képpont ;
- magasság : 22 képpont ;
- szegélysugár : 50% ;
- szegély : 2px tömör #3f3f46 ;
- kurzor : mutató ;
- átmenet : átalakítás 0,2 másodperc , szegélyszín 0,2 másodperc ;
- kitöltés : 0 ;
- }
-
- .swatch-btn.active , .swatch-btn:hover {
- transzform : scale ( 1,25 );
- szegélyszín : #c084fc !important ;
- doboz-árnyék : 0 0 8px rgba ( 192 , 132 , 252 , 0,6 );
- }
-
- /* Sötét bemenetek létrehozása */
- .form-control-dark {
- háttérszín : #171720 !important ;
- szegély : 1px tömör #2e2e3a !important ;
- szín : #f4f4f5 !fontos ;
- }
-
- .form-control-dark:focus {
- szegélyszín : var ( --lsg-purple ) !important ;
- doboz-árnyék : 0 0 0 0.25rem rgba ( 147 , 51 , 234 , 0.25 ) !fontos ;
- }
-
- .calc-box {
- háttér : lineáris gradiens ( 135 fok , rgba ( 20 , 15 , 30 , 0,9 ), rgba ( 12 , 10 , 18 , 0,95 ));
- }
-
- /* Táblázat */
- .custom-table thead th { } }
- háttérszín : #181822 ;
- szín : #c084fc ;
- border-bottom : 2px tömör rgba ( 147 , 51 , 234 , 0.3 );
- betűméret : 0,85 rem ;
- betűköz : 0,5 képpont ;
- text-transform : nagybetű ;
- }
-
- .custom-table tbody tr { } }
- border-bottom : 1px tömör #23232e ;
- }
-
- .custom-table tbody tr:hover {
- háttérszín : rgba ( 147 , 51 , 234 , 0.08 ) !important ;
- }
-
- /* Nézetváltó és rendezés gombok */
- .view-switcher .btn-view { }
- háttér : #171720 ;
- szegély : 1px tömör #2d2d3a ;
- szín : #a1a1aa ;
- }
-
- .view-switcher .btn-view.active { }
- háttér : var ( --lsg-purple );
- szín : #ffffff ;
- szegélyszín : var ( --lsg-purple );
- }
-
- .btn-rendezés {
- háttér : #171720 ;
- szegély : 1px tömör #2a2a36 ;
- szín : #d4d4d8 ;
- }
-
- .btn-rendezés:lebegés {
- háttér : rgba ( 147 , 51 , 234 , 0,25 );
- szín : #c084fc ;
- szegélyszín : var ( --lsg-purple );
- }
-
- /* Vissza a tetejére lebegő gomb */
- #görgetésAFelsőGombra {
- pozíció : rögzített ;
- alul : 25 képpont ;
- jobbra : 25 képpont ;
- szélesség : 50 képpont ;
- magasság : 50 képpont ;
- kijelző : nincs ;
- igazítás-elemek : középre ;
- igazítsd a tartalmat : középre ;
- z-index : 1050 ;
- határ : nincs ;
- }
+/* Tetejére ugró gomb */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  display: none;
+  z-index: 99;
+}
