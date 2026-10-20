@@ -24,12 +24,12 @@ const cars = [
   },
   {
     id: 3,
-    brand: "Mercedes-AMG",
-    model: "GT Coupe",
-    dailyPrice: 75000,
+    brand: "Fiat 500",
+    model: "Abarth",
+    dailyPrice: 25000,
     colors: [
-      { name: "Matt Fekete", hex: "#09090b", img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600" },
-      { name: "Amethyst Lila", hex: "#6b21a8", img: "https://images.unsplash.com/photo-1617788138017-80ad40651399?w=600" }
+      { name: "Matt Fekete", hex: "#09090b", img: "/cars/colors/fiat500fekete.avif" },
+      { name: "Amethyst Lila", hex: "#6b21a8", img: "/cars/colors/fiat500lila.jpg" }
     ]
   },
   {
@@ -39,7 +39,7 @@ const cars = [
     dailyPrice: 59000,
     colors: [
       { name: "Phantom Black", hex: "#171717", img: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=600" },
-      { name: "Royal Purple", hex: "#9333ea", img: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?w=600" }
+      { name: "Royal Purple", hex: "#9333ea", img: "/cars/colors/audilila.webp" }
     ]
   },
   {
@@ -58,8 +58,8 @@ const cars = [
     model: "Model S Plaid",
     dailyPrice: 62000,
     colors: [
-      { name: "Solid Black", hex: "#1e1e1e", img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600" },
-      { name: "Electric Purple", hex: "#c084fc", img: "https://images.unsplash.com/photo-1536700503339-1e4b06520771?w=600" }
+      { name: "Solid Black", hex: "#1e1e1e", img: "/cars/colors/teslafekete.webp" },
+      { name: "Electric Purple", hex: "#c084fc", img: "/cars/colors/teslalila.jpg" }
     ]
   }
 ];
