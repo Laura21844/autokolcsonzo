@@ -1,5 +1,3 @@
-
-// 1. Alapadatok
 const cars = [
   {
     id: 1,
@@ -64,25 +62,30 @@ const cars = [
   }
 ];
 
-let rentals = [
-  { id: "LSG-101", customerName: "Kovács Péter", phone: "+36301234567", email: "kovacs@mail.hu", carId: 1, carName: "BMW M4 Competition", color: "Neon Lila", startDate: "2026-10-12", endDate: "2026-10-15", days: 3, price: 156000, active: true },
-  { id: "LSG-102", customerName: "Nagy Anna", phone: "+36209876543", email: "anna@mail.hu", carId: 2, carName: "Porsche Taycan Turbo S", color: "Fekete Metál", startDate: "2026-10-14", endDate: "2026-10-18", days: 4, price: 272000, active: true },
-  { id: "LSG-103", customerName: "Tóth Bence", phone: "+36704561234", email: "bence@mail.hu", carId: 3, carName: "Mercedes-AMG GT Coupe", color: "Amethyst Lila", startDate: "2026-10-20", endDate: "2026-10-22", days: 2, price: 150000, active: true }
-];
-
+// Ide töltődnek be az adatok a rentals.json-ból
+let rentals = [];
 let sortCol = "customerName";
 let sortAsc = true;
 
-// 2. DOM inicializálás
-document.addEventListener("DOMContentLoaded", () => {
+// 2. DOM inicializálás + Aszinkron JSON betöltés
+document.addEventListener("DOMContentLoaded", async () => {
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("startDate").min = today;
   document.getElementById("endDate").min = today;
 
   renderFleet();
   populateDropdowns();
-  renderRentals();
   attachEvents();
+
+  // Foglalások beolvasása a külön JSON fájlból
+  try {
+    const res = await fetch("./kolcsonzott.js");
+    if (!res.ok) throw new Error(`HTTP hiba: ${res.status}`);
+    rentals = await res.json();
+    renderRentals();
+  } catch (err) {
+    console.error("Nem sikerült betölteni a foglalási adatokat:", err);
+  }
 });
 
 // 3. Portfólió + Színváltó generálás
@@ -94,7 +97,6 @@ function renderFleet() {
     const col = document.createElement("div");
     col.className = "col-md-6 col-lg-4";
     
-    // Színgombok HTML
     const swatches = car.colors.map((c, i) => `
       <span class="swatch ${i === 0 ? 'active' : ''}" style="background-color: ${c.hex};" 
             onclick="changeCarColor(${car.id}, '${c.img}', '${c.name}', this)"></span>
@@ -160,7 +162,6 @@ function updateColorDropdown() {
   }
 }
 
-
 // 5. Foglalások megjelenítése és szűrése
 function renderRentals() {
   const txt = document.getElementById("filterText").value.toLowerCase();
@@ -203,7 +204,7 @@ function renderRentals() {
         </div>
         <h5 class="text-white">${r.customerName}</h5>
         <p class="text-secondary small mb-2">${r.carName} &bull; ${r.color}</p>
-        <p class="small text-secondary mb-3">${r.startDate} - ${r.endDate} (${r.days} nap)</p>
+        <p class="small text-secondary mb-3">${r.startDate} &rarr; ${r.endDate} (${r.days} nap)</p>
         <button class="btn btn-sm btn-outline-danger w-100" onclick="deleteRental('${r.id}')">Törlés</button>
       </div>
     </div>
@@ -252,7 +253,15 @@ function attachEvents() {
     updateColorDropdown();
     calculatePrice();
   });
-  document.getElementById("startDate").addEventListener("change", calculatePrice);
+  
+  // Dátumválasztás és a záródátum minimumának dinamikus igazítása
+  document.getElementById("startDate").addEventListener("change", () => {
+    const startVal = document.getElementById("startDate").value;
+    if (startVal) {
+      document.getElementById("endDate").min = startVal;
+    }
+    calculatePrice();
+  });
   document.getElementById("endDate").addEventListener("change", calculatePrice);
 
   // Szűrők
@@ -309,16 +318,32 @@ function handleBookingSubmit(e) {
   const start = document.getElementById("startDate").value;
   const end = document.getElementById("endDate").value;
 
-  // Egyszerű validációk
+  // Egyszerű mezőellenőrzések
   if (!name || !email || !phone || !start || !end) {
     alertBox.textContent = "Minden csillagozott mező kitöltése kötelező!";
     alertBox.classList.remove("d-none");
     return;
   }
 
+  // Email formátum ellenőrzése
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alertBox.textContent = "Kérlek, érvényes email-címet adj meg!";
+    alertBox.classList.remove("d-none");
+    return;
+  }
+
+  // Telefonszám formátum ellenőrzése
+  const phoneRegex = /^(\+?[0-9\s\-]{8,15})$/;
+  if (!phoneRegex.test(phone)) {
+    alertBox.textContent = "Kérlek, érvényes telefonszámot adj meg!";
+    alertBox.classList.remove("d-none");
+    return;
+  }
+
   const calc = calculatePrice();
   if (calc.days <= 0) {
-    alertBox.textContent = "A záró dátum nem lehet korábbi a kezdő dátumnál!";
+    alertBox.textContent = "A záró dátum nem lehet korábbi vagy azonos a kezdő dátummal!";
     alertBox.classList.remove("d-none");
     return;
   }
@@ -355,7 +380,7 @@ function handleBookingSubmit(e) {
   const successCard = document.getElementById("successCard");
   document.getElementById("successDetails").innerHTML = `
     <strong>Kód:</strong> ${newBooking.id} | <strong>Autó:</strong> ${newBooking.carName} (${newBooking.color})<br>
-    <strong>Időszak:</strong> ${newBooking.startDate} - ${newBooking.endDate} (${newBooking.days} nap)<br>
+    <strong>Időszak:</strong> ${newBooking.startDate} &rarr; ${newBooking.endDate} (${newBooking.days} nap)<br>
     <strong>Összeg:</strong> ${newBooking.price.toLocaleString()} Ft
   `;
   successCard.classList.remove("d-none");
